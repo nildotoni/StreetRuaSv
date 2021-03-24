@@ -2,11 +2,19 @@ package br.com.ragegames.streetruasv.dto.form;
 
 
 
+import javax.persistence.Column;
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Size;
+
+import org.hibernate.validator.constraints.NotEmpty;
+
 import br.com.ragegames.streetruasv.model.Usuario;
 import br.com.ragegames.streetruasv.repository.UsuarioRepository;
 
 public class UsuarioForm {
+	@NotNull @NotEmpty  @Size(min=3, max=30) @Column(unique = true)
 	private String nome;
+	@NotNull @NotEmpty  @Size(min=3, max=30) 
 	private String pass;
 	
 	public String getNome() {

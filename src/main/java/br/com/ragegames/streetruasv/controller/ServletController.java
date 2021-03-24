@@ -2,6 +2,8 @@ package br.com.ragegames.streetruasv.controller;
 
 import java.util.List;
 
+import javax.validation.Valid;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -29,7 +31,7 @@ public class ServletController {
 	}
 	
 	@PostMapping
-	public Usuario cadastrar(@RequestBody UsuarioForm form) {
+	public Usuario cadastrar(@RequestBody @Valid UsuarioForm form) {
 		Usuario usuario = form.converter(usuarioRepository);
 		usuarioRepository.save(usuario);
 		return usuario;

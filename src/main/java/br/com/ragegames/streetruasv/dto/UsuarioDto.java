@@ -3,10 +3,16 @@ package br.com.ragegames.streetruasv.dto;
 import java.util.List;
 import java.util.stream.Collectors;
 
+import javax.persistence.Column;
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Size;
+
+import org.hibernate.validator.constraints.NotEmpty;
 
 import br.com.ragegames.streetruasv.model.Usuario;
 
 public class UsuarioDto {
+	
 	private String nome;
 
 	public UsuarioDto(Usuario usuario) {
