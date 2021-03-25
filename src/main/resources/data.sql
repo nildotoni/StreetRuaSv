@@ -1,0 +1,2 @@
+INSERT INTO USUARIO(nome, pass) VALUES('nildotoni', '$2a$10$X3yt861mdSfB9aa1exZDq.N6KYU8JmC5sXQN.NYSmNR1ORLdwUBHi');
+

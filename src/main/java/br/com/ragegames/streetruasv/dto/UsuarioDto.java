@@ -8,6 +8,7 @@ import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 
 import org.hibernate.validator.constraints.NotEmpty;
+import org.springframework.data.domain.Page;
 
 import br.com.ragegames.streetruasv.model.Usuario;
 
@@ -28,7 +29,7 @@ public class UsuarioDto {
 		this.nome = nome;
 	}
 	
-	public static List<UsuarioDto> converter(List<Usuario> lista) {
-		return lista.stream().map(UsuarioDto::new).collect(Collectors.toList());
+	public static Page<UsuarioDto> converter(Page<Usuario> list) {
+		return list.map(UsuarioDto::new);
 	}
 }
